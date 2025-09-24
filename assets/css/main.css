@@ -141,7 +141,7 @@ h6 {
 
 @media (max-width: 1200px) {
   .header {
-    padding-top: 10px;
+    /* padding-top: 10px; */
   }
 
   
@@ -694,7 +694,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 0 0px 60px 0;
   scroll-margin-top: 90px;
   overflow: clip;
 }
@@ -742,200 +742,19 @@ section,
   color: var(--accent-color);
 }
 
-/*--------------------------------------------------------------
-# Travel Hero Section
---------------------------------------------------------------*/
-.travel-hero {
-  position: relative;
-  overflow: hidden;
-  background-size: cover;       /* full coverage, crop ho sakta hai */
-  background-position: center;  /* center the image */
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;   
+/* Default (Desktop + iPad) */
+#travel-hero {
+  background-image: url('assets/img/Class of 1976_Header banner1.jpg');
+  /* background-size: cover; */
+  max-width: 100%;
+  background-position: center;
+  height: 100vh;
 }
 
-.travel-hero .hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-.travel-hero .hero-background video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.travel-hero .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.travel-hero .hero-text .hero-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-}
-
-.travel-hero .hero-text .hero-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
-  line-height: 1.6;
-}
-
-.travel-hero .hero-text .hero-buttons .btn {
-  padding: 12px 30px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-}
-
-.travel-hero .hero-text .hero-buttons .btn.btn-primary {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.travel-hero .hero-text .hero-buttons .btn.btn-primary:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  border-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  transform: translateY(-2px);
-}
-
-.travel-hero .hero-text .hero-buttons .btn.btn-outline {
-  background-color: transparent;
-  border: 2px solid var(--contrast-color);
-  color: var(--contrast-color);
-}
-
-.travel-hero .hero-text .hero-buttons .btn.btn-outline:hover {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  transform: translateY(-2px);
-  border-color: var(--accent-color);
-}
-
-.travel-hero .booking-form-wrapper .booking-form {
-  background-color: var(--surface-color);
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 0 10px 30px color-mix(in srgb, var(--default-color), transparent 85%);
-  backdrop-filter: blur(10px);
-}
-
-.travel-hero .booking-form-wrapper .booking-form .form-title {
-  color: var(--heading-color);
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.travel-hero .booking-form-wrapper .booking-form label {
-  color: var(--heading-color);
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-}
-
-.travel-hero .booking-form-wrapper .booking-form .form-control,
-.travel-hero .booking-form-wrapper .booking-form .form-select {
-  border: 2px solid color-mix(in srgb, var(--default-color), transparent 80%);
-  border-radius: 8px;
-  padding: 12px 15px;
-  font-size: 14px;
-  color: var(--default-color);
-  background-color: var(--surface-color);
-  transition: all 0.3s ease;
-}
-
-.travel-hero .booking-form-wrapper .booking-form .form-control:focus,
-.travel-hero .booking-form-wrapper .booking-form .form-select:focus {
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 75%);
-  outline: none;
-}
-
-.travel-hero .booking-form-wrapper .booking-form .form-control::placeholder,
-.travel-hero .booking-form-wrapper .booking-form .form-select::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-}
-
-.travel-hero .booking-form-wrapper .booking-form .btn-primary {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  color: var(--contrast-color);
-  padding: 12px 20px;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.travel-hero .booking-form-wrapper .booking-form .btn-primary:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  border-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  transform: translateY(-1px);
-}
-
-@media (max-width: 992px) {
-  .travel-hero .hero-text {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  .travel-hero .hero-text .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .travel-hero .hero-text .hero-subtitle {
-    font-size: 1.1rem;
-  }
-
-  .travel-hero .booking-form {
-    margin-top: 2rem;
-  }
-}
-
+/* Mobile (<768px) */
 @media (max-width: 768px) {
-  .travel-hero .hero-text .hero-title {
-    font-size: 2rem;
-  }
-
-  .travel-hero .hero-text .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .travel-hero .hero-text .hero-buttons .btn {
-    display: block;
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-
-  .travel-hero .hero-text .hero-buttons .btn:last-child {
-    margin-bottom: 0;
-  }
-
-  .travel-hero .booking-form-wrapper .booking-form {
-    padding: 1.5rem;
-  }
-}
-@media (min-width: 768px) and (max-width: 1024px) {
   #travel-hero {
-    height: 80vh;               /* iPad ke liye thoda chhota height */
-    background-size: cover;
-    background-position: center;
+    background-image: url('assets/img/Class of 1976_Header banner_Mobile Banner.jpg');
   }
 }
 
@@ -946,6 +765,7 @@ section,
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
   line-height: 1.3;
 }
 
@@ -8698,7 +8518,7 @@ section,
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
