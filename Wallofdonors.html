@@ -226,6 +226,410 @@
 
     renderPledges();
   </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Your Pledge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body {
+            background: linear-gradient(135deg, #f9f5f3 0%, #f1e8e4 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .pledge-container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(176, 75, 52, 0.1);
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            border-top: 4px solid #B04B34;
+        }
+
+        .pledge-heading {
+            color: #B04B34;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .pledge-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            position: relative;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #374151;
+            font-size: 14px;
+        }
+
+        .form-label::after {
+            content: " *";
+            color: #B04B34;
+        }
+
+        .form-input {
+            padding: 13px 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            background-color: white;
+            width: 100%;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #B04B34;
+            box-shadow: 0 0 0 3px rgba(176, 75, 52, 0.1);
+        }
+
+        .form-input:hover {
+            border-color: #B04B34;
+        }
+
+        /* Enhanced Dropdown Styling */
+        .select-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 13px 44px 13px 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            background-color: white;
+            appearance: none;
+            cursor: pointer;
+            color: #374151;
+        }
+
+        .form-select:focus {
+            outline: none;
+            border-color: #B04B34;
+            box-shadow: 0 0 0 3px rgba(176, 75, 52, 0.1);
+        }
+
+        .form-select:hover {
+            border-color: #B04B34;
+        }
+
+        .select-arrow {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            pointer-events: none;
+            transition: transform 0.3s ease;
+        }
+
+        .form-select:focus + .select-arrow {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        /* Custom Scrollbar for Dropdown */
+        .form-select::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .form-select::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .form-select::-webkit-scrollbar-thumb {
+            background: #B04B34;
+            border-radius: 4px;
+        }
+
+        .form-select::-webkit-scrollbar-thumb:hover {
+            background: #9a3e2a;
+        }
+
+        .form-submit {
+            background-color: #B04B34;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+            box-shadow: 0 4px 12px rgba(176, 75, 52, 0.3);
+            width: 100%;
+        }
+
+        .form-submit:hover {
+            background-color: #9a3e2a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(176, 75, 52, 0.4);
+        }
+
+        .form-submit:active {
+            transform: translateY(0);
+        }
+
+        .currency-amount-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        .currency-amount-group > div {
+            flex: 1;
+        }
+
+        .pledge-currency {
+            min-width: 120px;
+        }
+
+        .form-note {
+            font-size: 12px;
+            color: #6b7280;
+            text-align: center;
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+
+        .other-currency-input {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .pledge-container {
+                padding: 25px;
+            }
+            
+            .pledge-heading {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            
+            .pledge-container {
+                padding: 20px;
+                border-radius: 10px;
+            }
+            
+            .pledge-heading {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+            
+            .pledge-form {
+                gap: 15px;
+            }
+            
+            .currency-amount-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .form-input, .form-select {
+                padding: 12px 14px;
+                font-size: 14px;
+            }
+            
+            .form-submit {
+                padding: 14px;
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .pledge-container {
+                padding: 15px;
+            }
+            
+            .pledge-heading {
+                font-size: 20px;
+            }
+            
+            .form-input, .form-select {
+                padding: 11px 13px;
+            }
+        }
+
+        /* Animation for form elements */
+        .form-group {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="pledge-container">
+        <h2 class="pledge-heading">Make Your Pledge</h2>
+        <form class="pledge-form" id="pledgeForm">
+            <div class="form-group">
+                <label for="pledgeFullName" class="form-label">Full Name</label>
+                <input type="text" id="pledgeFullName" class="form-input" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="currency-amount-group">
+                <div class="form-group pledge-currency">
+                    <label for="pledgeCurrency" class="form-label">Pledge Currency</label>
+                    <div class="select-wrapper">
+                        <select id="pledgeCurrency" class="form-select" required size="1">
+                            <option value="" disabled selected>Select currency</option>
+                            <option value="INR">🇮🇳 Indian Rupee (INR)</option>
+                            <option value="USD">🇺🇸 US Dollar (USD)</option>
+                            <option value="GBP">🇬🇧 British Pound (GBP)</option>
+                            <option value="CAD">🇨🇦 Canadian Dollar (CAD)</option>
+                            <option value="AUD">🇦🇺 Australian Dollar (AUD)</option>
+                            <option value="AED">🇦🇪 UAE Dirham (AED)</option>
+                            <option value="EUR">🇪🇺 Euro (EUR)</option>
+                            <option value="Others">🌍 Other Currency</option>
+                        </select>
+                        <svg class="select-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="#B04B34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pledgeAmount" class="form-label">Pledge Amount</label>
+                    <input type="number" id="pledgeAmount" class="form-input" placeholder="Enter amount" min="1" required>
+                </div>
+            </div>
+
+            <div class="form-group other-currency-input" id="otherCurrencyGroup">
+                <label for="otherCurrency" class="form-label">Specify Currency</label>
+                <input type="text" id="otherCurrency" class="form-input" placeholder="e.g., JPY, CNY, SGD">
+            </div>
+
+            <div class="form-group">
+                <label for="pledgeYears" class="form-label">Fulfillment Period</label>
+                <div class="select-wrapper">
+                    <select id="pledgeYears" class="form-select" required size="1">
+                        <option value="" disabled selected>Select years</option>
+                        <option value="1">1 Year</option>
+                        <option value="2">2 Years</option>
+                        <option value="3">3 Years</option>
+                    </select>
+                    <svg class="select-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="#B04B34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+
+            <button type="submit" class="form-submit">Submit Pledge</button>
+        </form>
+        <p class="form-note">All fields are mandatory. Your information is secure and will only be used for pledge tracking purposes.</p>
+    </div>
+
+    <script>
+        // Show/hide other currency input based on selection
+        document.getElementById('pledgeCurrency').addEventListener('change', function() {
+            const otherCurrencyGroup = document.getElementById('otherCurrencyGroup');
+            if (this.value === 'Others') {
+                otherCurrencyGroup.style.display = 'flex';
+                document.getElementById('otherCurrency').setAttribute('required', 'required');
+            } else {
+                otherCurrencyGroup.style.display = 'none';
+                document.getElementById('otherCurrency').removeAttribute('required');
+            }
+        });
+
+        // Add animation to dropdown arrows on focus
+        document.querySelectorAll('.form-select').forEach(select => {
+            select.addEventListener('focus', function() {
+                this.nextElementSibling.style.transform = 'translateY(-50%) rotate(180deg)';
+            });
+            
+            select.addEventListener('blur', function() {
+                this.nextElementSibling.style.transform = 'translateY(-50%)';
+            });
+        });
+
+        document.getElementById('pledgeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const fullName = document.getElementById('pledgeFullName').value;
+            const currency = document.getElementById('pledgeCurrency').value;
+            const amount = document.getElementById('pledgeAmount').value;
+            const years = document.getElementById('pledgeYears').value;
+            const otherCurrency = document.getElementById('otherCurrency').value;
+            
+            // Determine final currency
+            let finalCurrency = currency;
+            if (currency === 'Others' && otherCurrency) {
+                finalCurrency = otherCurrency;
+            }
+            
+            // Validation
+            if (!fullName || !currency || !amount || !years) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            if (currency === 'Others' && !otherCurrency) {
+                alert('Please specify your currency');
+                return;
+            }
+            
+            // In a real application, you would send this data to a server
+            console.log('Pledge submitted:', {
+                fullName,
+                currency: finalCurrency,
+                amount,
+                years
+            });
+            
+            // Show success message
+            alert(`Thank you, ${fullName}! Your pledge of ${finalCurrency} ${amount} over ${years} year(s) has been recorded.`);
+            
+            // Reset form
+            this.reset();
+            document.getElementById('otherCurrencyGroup').style.display = 'none';
+            
+            // Reset dropdown arrows
+            document.querySelectorAll('.select-arrow').forEach(arrow => {
+                arrow.style.transform = 'translateY(-50%)';
+            });
+        });
+    </script>
+</body>
+</html>
 </body>
 </html>

@@ -88,7 +88,7 @@ h6 {
   --background-color: rgba(0, 0, 0, 0);
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --surface-color: rgba(0, 0, 0, 0.7);
+  --surface-color: rgba(0, 0, 0, 0.589);
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 20px 0;
@@ -8502,7 +8502,7 @@ section,
 }
 
 .fundraising-impact-section {
-  min-height: 1000px;
+  min-height: 100px;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -8570,17 +8570,18 @@ section,
   color: #fff;
 }
 .btn-wall {
-  background-color: #B04B34;
+  background-color: #B04B34; /* Professional burgundy */
   color: #fff;
-  border: 2px solid #B04B34;
+  border: 2px solid  #B04B34;
   font-weight: 600;
-  border-radius: 50px;
+  border-radius: 25px;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 12px rgba(176, 75, 52, 0.3);
+  box-shadow: 0 4px 12px rgba(159, 18, 57, 0.3);
 }
 
 .btn-wall:hover {
-  background-color: #8e3928; /* Slightly darker on hover */
-  color: #fff;
-  box-shadow: 0 6px 18px rgba(176, 75, 52, 0.45);
+  background-color:  #8a6515;
+  border-color:  #d19a1f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(136, 19, 55, 0.4);
 }
