@@ -62,7 +62,7 @@
           <!-- Buttons -->
           
           <li>
-            <a href="https://iitk.ac.in/dora/givingback/pledge/class-1976.php" class="btn me-3 my-2"
+            <a href="#form" class="btn me-3 my-2"
               style="background-color: #d19a1f; color: #ffffff; border: none; padding: 10px 14px; font-weight: 600; border-radius: 6px; box-shadow: 0 4px 8px rgba(209, 154, 31, 0.3); transition: all 0.3s ease;"
               target="_blank">
               Pledge Now
@@ -95,12 +95,101 @@
        style="height: auto;" 
        alt="Mobile Banner">
 </section> -->
+ <!-- Why Us Section -->
+ <section id="about-reunion" class="reunion-about-section">
+  <div class="container">
 
+    <div class="row align-items-center mb-5">
+
+      <!-- Left Content -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="about-content">
+          <h3 class="about-title">Celebrating 50 Years of Friendship & Legacy</h3>
+          <p class="about-text">
+            From classrooms and corridors to careers and milestones, our journey since 1976 has been truly remarkable.
+            This 50th reunion is more than an event; it’s a heartfelt celebration of enduring bonds and shared memories
+            from IIT Kanpur.
+          </p>
+
+          <p class="about-text">
+            Let’s gather once more to reconnect, reflect, and relive those iconic moments that shaped who we are.
+            Come home to where it all began at IITK.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="col-lg-6 mt-4" data-aos="fade-left">
+        <div class="about-image-box">
+          <img src="assets/img/DSC_1127.JPG" alt="Reunion Memories" class="about-img img-fluid rounded-4">
+          <div class="about-img-overlay"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<style>
+  /* Section Wrapper */
+.reunion-about-section {
+  padding: 80px 0;
+  background: #faf7f5;
+}
+
+/* Title */
+.about-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #B04B34;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 20px;
+}
+
+/* Paragraph */
+.about-text {
+  font-size: 20px;
+  font-weight: 400;
+  color: #444;
+  line-height: 1.7;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 15px;
+}
+
+/* Image Box */
+.about-image-box {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Image Zoom */
+.about-img {
+  transition: transform 0.45s ease-in-out;
+}
+
+.about-image-box:hover .about-img {
+  transform: scale(1.06);
+}
+
+/* Overlay */
+.about-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(176, 75, 52, 0.2), rgba(0,0,0,0.1));
+  pointer-events: none;
+}
+
+</style>
+<!-- /Why Us Section -->
 <section class="reunion-banner" id="reunion-home">
   <div class="reunion-container">
       <div class="reunion-banner-content">
           <h1>Class of 1976</h1>
           <h2>Golden Jubilee Reunion</h2>
+          
+         
          
           <div class="reunion-stats-container">
               <div class="reunion-stat-box">
@@ -139,6 +228,17 @@
                   <p>Alumni Participation</p>
               </div>
           </div>
+           <!-- Added CTAs -->
+           <div class="reunion-cta-container">
+            <a href="#form" class="reunion-cta-btn pledge">
+                <i class="fas fa-hand-holding-usd"></i>
+                Pledge Now
+            </a>
+            <a href="https://iitk.ac.in/dora/givingback/donate/1976-Class-Fund" class="reunion-cta-btn give-back">
+                <i class="fas fa-heart"></i>
+                Give Back
+            </a>
+        </div>
       </div>
   </div>
 </section>
@@ -161,7 +261,7 @@
 
   // Simple animation for stat boxes on scroll
   document.addEventListener('DOMContentLoaded', function () {
-      const statBoxes = document.querySelectorAll('.stat-box');
+      const statBoxes = document.querySelectorAll('.reunion-stat-box');
 
       const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
@@ -181,8 +281,6 @@
   });
 </script>
 <style>
-     
-
   .reunion-container {
       max-width: 1200px;
       margin: 0 auto;
@@ -236,6 +334,49 @@
       margin-right: auto;
       text-align: center;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  /* CTA Container Styles */
+  .reunion-cta-container {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 40px 0 50px;
+      flex-wrap: wrap;
+  }
+
+  .reunion-cta-btn {
+      padding: 18px 35px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .reunion-cta-btn.pledge {
+      background-color: #ffcc00;
+      color: #1a2a6c;
+  }
+
+  .reunion-cta-btn.give-back {
+      background-color: #b21f1f;
+      color: white;
+  }
+
+  .reunion-cta-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  }
+
+  .reunion-cta-btn:active {
+      transform: translateY(-2px);
   }
 
   .reunion-stats-container {
@@ -321,7 +462,6 @@
         margin-top: 50px;
           font-size: 3rem;
           visibility: hidden;
-
       }
 
       .reunion-banner h2 {
@@ -330,6 +470,17 @@
 
       .reunion-banner p {
           font-size: 1.1rem;
+      }
+
+      .reunion-cta-container {
+          flex-direction: column;
+          align-items: center;
+      }
+
+      .reunion-cta-btn {
+          width: 100%;
+          max-width: 280px;
+          justify-content: center;
       }
 
       .reunion-stats-container {
@@ -360,6 +511,11 @@
           font-size: 1rem;
       }
 
+      .reunion-cta-btn {
+          padding: 15px 25px;
+          font-size: 1.1rem;
+      }
+
       .reunion-stat-value {
           font-size: 2rem;
       }
@@ -383,46 +539,7 @@
 
     <!-- /Travel Hero Section -->
 
-    <!-- Why Us Section -->
-    <section id="why-us" class="why-us section">
-
-      <div class="container">
-
-        <!-- About Us Content -->
-        <div class="row align-items-center mb-2">
-          <!-- Left Content -->
-          <div class="col-lg-6" data-aos="fade-right">
-            <div class="content">
-              <h3>Celebrating 50 Years of Friendship & Legacy</h3>
-              <p>From classrooms and corridors to careers and milestones - our journey since 1976 has been truly
-                remarkable.
-                This 50th reunion is more than an event; it’s a heartfelt celebration of enduring bonds and shared
-                memories
-                from IIT Kanpur.</p>
-              <p>Let’s gather once more to reconnect, reflect, and relive those iconic moments that shaped who we are.
-                Come home to where it all began - at IITK..</p>
-            </div>
-          </div>
-
-
-          <!-- Right Image -->
-          <div class="col-lg-6 mt-4" data-aos="fade-left">
-            <div class="about-image" style="position: relative;">
-              <img src="assets/img/DSC_1127.JPG" alt="Travel Experience" class="img-fluid rounded-4">
-
-            </div>
-
-          </div>
-        </div>
-        <!-- End About Us Content -->
-
-
-
-
-      </div>
-
-
-    </section><!-- /Why Us Section -->
+   
 
     <!--------Rsvp-->
 
@@ -637,119 +754,7 @@
       });
     </script>
     <!-----------------------our impact end-->
-    <!---------------------------------------------------------Fundrasing widget -->
-    <section class="fundraising-impact-section position-relative">
-      <div class="fundraising-parallax-bg d-flex align-items-center justify-content-center text-white text-center py-5"
-        style="background-image: url('assets/img/IIT6247.JPG');">
-
-        <!-- Overlay -->
-        <div class="fundraising-overlay"></div>
-
-        <!-- Main Content Container -->
-        <div class="fundraising-content container position-relative z-2">
-          <h1 class="mb-4 text-white text-center" style="
-          font-size: 46px; 
-          background: rgba(32,32,32,0.3);
-          padding: 5px 12px; 
-          border-radius: 6px; 
-          display: table;
-          margin: 0 auto;
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
-      ">
-          Fundraising Initiative
-      </h1>
-      
-
-
-      <p style="
-      font-size: 26px;
-      font-weight: 600;
-      color: #ffffff;
-      margin-top: 10px;
-      background: #B04B34;
-      padding: 6px 16px;
-      border-radius: 6px;
-      display: table;
-      margin: 0 auto;
-  ">
-      100% Participation from the Batch
-  </p>
-  
-      
-      
-      
-
-          <!-- Impact Numbers Grid -->
-          <div class="row gy-4 justify-content-center mt-4 mb-5">
-            <div class="col-md-6 col-lg-4">
-              <div class="impact-card">
-                <h6 class="text-uppercase">Total Pledged</h6>
-                <h1 class="counter text-white" data-target="">₹0</h1>
-              </div>
-            </div>
-
-
-            <div class="col-md-6 col-lg-4">
-              <div class="impact-card">
-                <h6 class="text-uppercase">No. of Pledges</h6>
-                <h1 class="counter text-white" data-target="">0</h1>
-              </div>
-            </div>
-          </div>
-
-          <!-- CTA Buttons -->
-          <!-- CTA Buttons -->
-          <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-            <a href="https://iitk.ac.in/dora/givingback/pledge/class-1976.php"
-              class="btn btn-wall px-5 py-4 fs-3">Pledge</a>
-
-            <a href="https://iitk.ac.in/dora/givingback/donate/1976-Class-Fund" class="btn btn-wall px-5 py-4 fs-3">Give
-              Back</a>
-            
-          </div>
-
-
-
-
-
-
-        </div>
-      </div>
-    </section>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const counters = document.querySelectorAll(".counter");
-
-        counters.forEach(counter => {
-          const updateCount = () => {
-            const target = +counter.getAttribute("data-target");
-            const current = +counter.innerText.replace(/[₹,]/g, "");
-            const increment = target / 200;
-
-            if (current < target) {
-              const newValue = Math.ceil(current + increment);
-              counter.innerText = target >= 1000
-                ? formatNumber(newValue, counter.dataset.target)
-                : newValue;
-              setTimeout(updateCount, 10);
-            } else {
-              counter.innerText = formatNumber(target, counter.dataset.target);
-            }
-          };
-
-          updateCount();
-        });
-
-        function formatNumber(num, target) {
-          if (target >= 100000) {
-            return "₹" + num.toLocaleString("en-IN");
-          }
-          return num.toLocaleString("en-IN");
-        }
-      });
-
-    </script>
+   
     <section class="wall-section py-5">
       <div class="container">
         <div class="row align-items-center">
@@ -1224,11 +1229,12 @@
                   style="color: #B04B34;">Message</span></h3>
             </div>
 
-            <p class="fs-5 fw-semibold text-dark mb-0" style="line-height: 1.8; font-family: 'Raleway', sans-serif;">
-              Fifty-five years ago, the Class of 1976 stepped onto the IIT Kanpur campus — a batch of brilliant students
-              from every corner of India. Together we created memories, built friendships, and laid the foundation for a
-              lifetime of bonds. Today, half a century later, it’s time to come together again to celebrate our
-              journey.</span>
+            <p class="fs-4 fw-semibold text-dark mb-0" style="line-height: 1.8; font-family: 'Raleway', sans-serif;">
+              From classrooms and corridors to careers and milestones — the journey we began in 1976 has been nothing short of extraordinary. This 50th reunion is not just a gathering; it’s a celebration of friendships, memories, and the spirit of IIT Kanpur that has stayed with us through the decades.
+
+              Let’s come together to reconnect, look back on the moments that shaped us, and return to the place where it all started -IITK.
+              
+              As we mark this golden milestone, we also have a chance to give back to the institution that shaped our lives. Together, we’re aiming to create a meaningful legacy with a heartfelt goal of ₹10 crore - a contribution that reflects our gratitude for all that IITK gave us.</span>
             </p>
           </div>
         </div>
@@ -1299,184 +1305,624 @@
       </div>
     </section>
     <!-- /Call To Action Section -->
-      <!-- ===================== PLEDGE SECTION (UNIQUE) ===================== -->
-<section class="pledge-section-unique">
+<!-- ===================== PLEDGE SECTION===================== -->
+<section id="form" class="pledge-section-unique">
   <div class="pledge-box-unique">
-      <h2 class="pledge-title-unique">Make Your Pledge</h2>
+    <h2 class="pledge-title-unique">Make Your Pledge</h2>
 
-      <form class="pledge-form-unique" id="pledgeFormUnique">
+    <form class="pledge-form-unique" id="pledgeFormUnique" novalidate>
 
-          <!-- Full Name -->
-          <div class="pledge-field-unique">
-              <label for="pledgeFullNameUnique" class="pledge-label-unique">Full Name</label>
-              <input type="text" id="pledgeFullNameUnique" class="pledge-input-unique" placeholder="Enter your full name" required>
+      <!-- Full Name -->
+      <div class="pledge-field-unique">
+        <label for="pledgeFullNameUnique" class="pledge-label-unique">Full Name</label>
+        <input type="text" id="pledgeFullNameUnique" class="pledge-input-unique" placeholder="Enter your full name" required>
+      </div>
+
+      <!-- Row: Currency (custom dropdown) + Amount (number) — equal widths -->
+      <div class="pledge-row-unique" style="align-items:flex-end;">
+
+        <!-- Currency (custom) -->
+        <div class="pledge-field-unique" style="flex:1;">
+          <label class="pledge-label-unique">Pledge Currency</label>
+
+          <div class="custom-dropdown" data-name="pledgeCurrency">
+            <button type="button" class="cd-selected" aria-haspopup="listbox" aria-expanded="false">
+              <span class="cd-placeholder">Select currency</span>
+              <svg class="cd-arrow" viewBox="0 0 24 24" width="18" height="18">
+                <path d="M6 9L12 15L18 9" stroke="#B04B34" stroke-width="2" stroke-linecap="round" fill="none"/>
+              </svg>
+            </button>
+
+            <div class="cd-options" role="listbox" tabindex="-1">
+              <div class="cd-option" role="option" data-value="INR">🇮🇳 Indian Rupee (INR)</div>
+              <div class="cd-option" role="option" data-value="USD">🇺🇸 US Dollar (USD)</div>
+              <div class="cd-option" role="option" data-value="GBP">🇬🇧 British Pound (GBP)</div>
+              <div class="cd-option" role="option" data-value="CAD">🇨🇦 Canadian Dollar (CAD)</div>
+              <div class="cd-option" role="option" data-value="AUD">🇦🇺 Australian Dollar (AUD)</div>
+              <div class="cd-option" role="option" data-value="AED">🇦🇪 UAE Dirham (AED)</div>
+              <div class="cd-option" role="option" data-value="EUR">🇪🇺 Euro (EUR)</div>
+              <div class="cd-option" role="option" data-value="OTHER">🌍 Other Currency</div>
+            </div>
+
+            <!-- hidden input to submit form value -->
+            <input type="hidden" name="pledgeCurrency" class="cd-value" required>
+          </div>
+        </div>
+
+        <!-- Amount -->
+        <div class="pledge-field-unique" style="flex:1;">
+          <label for="pledgeAmountUnique" class="pledge-label-unique">Pledge Amount</label>
+          <input type="number" id="pledgeAmountUnique" class="pledge-input-unique numeric-only" placeholder="Enter amount" min="1" step="1" required />
+        </div>
+      </div>
+
+      <!-- Other Currency (initially hidden, shown when OTHER selected) -->
+      <div class="pledge-field-unique pledge-other-currency-wrap-unique" id="otherCurrencyWrapUnique" style="display: none;">
+        <label for="otherCurrencyUnique" class="pledge-label-unique">Specify Currency</label>
+        <input type="text" id="otherCurrencyUnique" class="pledge-input-unique" placeholder="e.g., JPY, CNY, SGD">
+      </div>
+
+      <!-- Fulfillment Period (custom) -->
+      <div class="pledge-field-unique" style="max-width:220px;">
+        <label class="pledge-label-unique">Fulfillment Period</label>
+
+        <div class="custom-dropdown" data-name="pledgeYears">
+          <button type="button" class="cd-selected" aria-haspopup="listbox" aria-expanded="false">
+            <span class="cd-placeholder">Select years</span>
+            <svg class="cd-arrow" viewBox="0 0 24 24" width="18" height="18">
+              <path d="M6 9L12 15L18 9" stroke="#B04B34" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </button>
+
+          <div class="cd-options" role="listbox" tabindex="-1">
+            <div class="cd-option" role="option" data-value="1">1 Year</div>
+            <div class="cd-option" role="option" data-value="2">2 Years</div>
+            <div class="cd-option" role="option" data-value="3">3 Years</div>
           </div>
 
-          <!-- Currency + Amount  -->
-          <div class="pledge-row-unique">
-              
-              <!-- Currency -->
-              <div class="pledge-field-unique">
-                  <label for="pledgeCurrencyUnique" class="pledge-label-unique">Pledge Currency</label>
-                  <div class="pledge-select-wrap-unique">
-                      <select id="pledgeCurrencyUnique" class="pledge-select-unique" required>
-                          <option value="" disabled selected>Select currency</option>
-                          <option value="INR">🇮🇳 Indian Rupee (INR)</option>
-                          <option value="USD">🇺🇸 US Dollar (USD)</option>
-                          <option value="GBP">🇬🇧 British Pound (GBP)</option>
-                          <option value="CAD">🇨🇦 Canadian Dollar (CAD)</option>
-                          <option value="AUD">🇦🇺 Australian Dollar (AUD)</option>
-                          <option value="AED">🇦🇪 UAE Dirham (AED)</option>
-                          <option value="EUR">🇪🇺 Euro (EUR)</option>
-                          <option value="OTHER">🌍 Other Currency</option>
-                      </select>
+          <input type="hidden" name="pledgeYears" class="cd-value" required>
+        </div>
+      </div>
 
-                      <svg class="pledge-arrow-unique" viewBox="0 0 24 24">
-                          <path d="M6 9L12 15L18 9" stroke="#B04B34" stroke-width="2" stroke-linecap="round"/>
-                      </svg>
-                  </div>
-              </div>
-
-              <!-- Amount -->
-              <div class="pledge-field-unique">
-                  <label for="pledgeAmountUnique" class="pledge-label-unique">Pledge Amount</label>
-                  <input type="number" id="pledgeAmountUnique" class="pledge-input-unique" placeholder="Enter amount" min="1" required>
-              </div>
-
-          </div>
-
-          <!-- Other Currency -->
-          <div class="pledge-field-unique pledge-other-currency-wrap-unique" id="otherCurrencyWrapUnique">
-              <label for="otherCurrencyUnique" class="pledge-label-unique">Specify Currency</label>
-              <input type="text" id="otherCurrencyUnique" class="pledge-input-unique" placeholder="e.g., JPY, CNY, SGD">
-          </div>
-
-          <!-- Fulfillment Period -->
-          <div class="pledge-field-unique">
-              <label for="pledgeYearsUnique" class="pledge-label-unique">Fulfillment Period</label>
-              <div class="pledge-select-wrap-unique">
-                  <select id="pledgeYearsUnique" class="pledge-select-unique" required>
-                      <option value="" disabled selected>Select years</option>
-                      <option value="1">1 Year</option>
-                      <option value="2">2 Years</option>
-                      <option value="3">3 Years</option>
-                  </select>
-
-                  <svg class="pledge-arrow-unique" viewBox="0 0 24 24">
-                      <path d="M6 9L12 15L18 9" stroke="#B04B34" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-              </div>
-          </div>
-
-          <button type="submit" class="pledge-submit-unique">Submit Pledge</button>
-      </form>
-
-     
+      <button type="submit" class="pledge-submit-unique">Submit Pledge</button>
+    </form>
   </div>
 </section>
 
-<!-- ===================== JS UNIQUE ===================== -->
-<script>
-  // Toggle Other Currency
-  document.getElementById("pledgeCurrencyUnique").addEventListener("change", function () {
-      const wrap = document.getElementById("otherCurrencyWrapUnique");
-      const input = document.getElementById("otherCurrencyUnique");
-
-      if (this.value === "OTHER") {
-          wrap.style.display = "flex";
-          input.setAttribute("required", "required");
-      } else {
-          wrap.style.display = "none";
-          input.removeAttribute("required");
-      }
-  });
-
-  // Submit Handler
-  document.getElementById("pledgeFormUnique").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const name = document.getElementById("pledgeFullNameUnique").value;
-      const currency = document.getElementById("pledgeCurrencyUnique").value;
-      const amount = document.getElementById("pledgeAmountUnique").value;
-      const years = document.getElementById("pledgeYearsUnique").value;
-      const otherCurrency = document.getElementById("otherCurrencyUnique").value;
-
-      let finalCurrency = currency === "OTHER" ? otherCurrency : currency;
-
-      alert(`Thank you, ${name}! Your pledge of ${finalCurrency} ${amount} over ${years} year(s) has been recorded.`);
-
-      this.reset();
-
-      document.getElementById("otherCurrencyWrapUnique").style.display = "none";
-  });
-</script>
-
-<!-- ===================== UNIQUE CSS ONLY FOR THIS SECTION ===================== -->
+<!-- ===================== STYLES ===================== -->
 <style>
-  .pledge-section-unique { 
-      display: flex; justify-content: center; padding: 40px;
+/* Container */
+.pledge-section-unique { 
+  display:flex; 
+  justify-content:center; 
+  padding:32px 20px; 
+  background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+  min-height: 100vh;
+  align-items: center;
+}
+.pledge-box-unique {
+  width:100%; 
+  max-width:720px; 
+  background:#fff; 
+  padding:40px; 
+  border-radius:16px;
+  border-top:6px solid #B04B34; 
+  box-shadow:0 20px 60px rgba(176,75,52,0.12);
+  margin: 20px 0;
+}
+.pledge-title-unique { 
+  text-align:center; 
+  color:#B04B34; 
+  font-size:28px; 
+  font-weight:700; 
+  margin-bottom:32px;
+  position: relative;
+  padding-bottom: 15px;
+}
+.pledge-title-unique:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #B04B34;
+  border-radius: 2px;
+}
+
+/* Form basics */
+.pledge-form-unique { 
+  display:flex; 
+  flex-direction:column; 
+  gap:24px; 
+}
+.pledge-field-unique { 
+  display:flex; 
+  flex-direction:column; 
+  gap:10px; 
+}
+.pledge-label-unique { 
+  font-size:15px; 
+  font-weight:600; 
+  color:#374151; 
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.3px;
+}
+.pledge-label-unique::after { 
+  content:" *"; 
+  color:#B04B34; 
+  margin-left: 3px;
+}
+
+/* Inputs */
+.pledge-input-unique {
+  padding:16px 18px; 
+  border-radius:10px; 
+  border:2px solid #e5e7eb; 
+  font-size:16px;
+  transition:.2s ease; 
+  background:#fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+.pledge-input-unique:focus { 
+  outline:none; 
+  border-color:#B04B34; 
+  box-shadow:0 0 0 4px rgba(176,75,52,0.12); 
+}
+.pledge-input-unique::placeholder {
+  color: #9ca3af;
+  font-size: 15px;
+}
+
+/* Row layout for currency+amount */
+.pledge-row-unique { 
+  display:flex; 
+  gap:16px; 
+  align-items:flex-end; 
+}
+
+/* Submit */
+.pledge-submit-unique {
+  background: linear-gradient(135deg, #B04B34 0%, #d1432a 100%); 
+  color:#fff; 
+  padding:18px 24px; 
+  border-radius:10px; 
+  border:none;
+  font-size:18px; 
+  font-weight:600; 
+  cursor:pointer; 
+  transition:all 0.3s ease;
+  margin-top: 20px;
+  width: 100%;
+  letter-spacing: 0.5px;
+}
+.pledge-submit-unique:hover { 
+  background: linear-gradient(135deg, #9a3e2a 0%, #b53620 100%); 
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(176, 75, 52, 0.25);
+}
+.pledge-submit-unique:active {
+  transform: translateY(-1px);
+}
+
+/* ========== CUSTOM DROPDOWN STYLES ========== */
+.custom-dropdown { 
+  position:relative; 
+  font-family:inherit; 
+  width: 100%;
+}
+.custom-dropdown .cd-selected {
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between; 
+  width:100%; 
+  cursor:pointer;
+  padding:16px 18px; 
+  border-radius:10px; 
+  border:2px solid #e5e7eb; 
+  background:#fff; 
+  font-size:16px;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+.custom-dropdown .cd-selected:focus { 
+  outline:none; 
+  border-color:#B04B34; 
+  box-shadow:0 0 0 4px rgba(176,75,52,0.12); 
+}
+.custom-dropdown .cd-placeholder { 
+  color:#6b7280; 
+  font-size: 16px;
+}
+.custom-dropdown .cd-arrow { 
+  transition: transform .25s ease; 
+  flex-shrink: 0;
+}
+
+/* Options panel */
+.custom-dropdown .cd-options {
+  position:absolute; 
+  left:0; 
+  right:0; 
+  margin-top:8px;
+  background:#fff; 
+  border-radius:12px; 
+  border:2px solid #e5e7eb;
+  box-shadow:0 20px 60px rgba(2,6,23,0.15);
+  max-height:0; 
+  overflow:hidden; 
+  opacity:0; 
+  transform: translateY(-10px);
+  transform-origin:top center;
+  transition: max-height .3s cubic-bezier(.2,.9,.2,1), opacity .25s ease, transform .25s ease;
+  z-index:100;
+}
+.custom-dropdown.open .cd-options { 
+  max-height:280px; 
+  overflow-y:auto; 
+  opacity:1; 
+  transform:translateY(0); 
+}
+.custom-dropdown.open .cd-arrow { 
+  transform: rotate(180deg); 
+}
+
+.cd-option { 
+  padding:16px 18px; 
+  cursor:pointer; 
+  user-select:none; 
+  font-size:16px; 
+  color:#111827; 
+  transition: all 0.15s;
+  border-bottom: 1px solid #f3f4f6;
+}
+.cd-option:last-child {
+  border-bottom: none;
+}
+.cd-option:hover, .cd-option.highlight { 
+  background:#f6eaea; 
+  color:#111827; 
+}
+.cd-option.selected { 
+  font-weight:600; 
+  background: rgba(176, 75, 52, 0.08);
+  color: #B04B34;
+}
+
+/* scrollbar */
+.custom-dropdown .cd-options::-webkit-scrollbar { 
+  width:8px; 
+  border-radius: 10px;
+}
+.custom-dropdown .cd-options::-webkit-scrollbar-thumb { 
+  border-radius:10px; 
+  background: rgba(176,75,52,0.25); 
+}
+.custom-dropdown .cd-options::-webkit-scrollbar-track {
+  background: #f9fafb;
+  border-radius: 10px;
+}
+
+/* hide native number spinner (optional) */
+input[type=number]::-webkit-outer-spin-button, 
+input[type=number]::-webkit-inner-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] { 
+  -moz-appearance: textfield; 
+}
+
+/* Other currency field */
+.pledge-other-currency-wrap-unique {
+  transition: all 0.3s ease;
+}
+
+/* ========== MOBILE FIELDS SEPARATION ========== */
+@media (max-width: 768px) {
+  /* Make the row container stack items vertically */
+  .pledge-row-unique {
+    flex-direction: column !important;
+    gap: 16px !important;
   }
-
-  .pledge-box-unique {
-      width: 100%; max-width: 500px; background: #fff; padding: 30px;
-      border-radius: 12px; border-top: 4px solid #B04B34;
-      box-shadow: 0 10px 30px rgba(176, 75, 52, 0.15);
+  
+  /* Make each field take full width */
+  .pledge-row-unique > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 0 100% !important;
   }
-
-  .pledge-title-unique {
-      text-align: center; color: #B04B34;
-      font-size: 26px; font-weight: 700; margin-bottom: 25px;
+  
+  /* Remove any inline styles forcing them to be side-by-side */
+  .pledge-field-unique {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
   }
+}
 
-  .pledge-form-unique { display: flex; flex-direction: column; gap: 18px; }
-
-  .pledge-field-unique { display: flex; flex-direction: column; gap: 7px; }
-
-  .pledge-label-unique { font-size: 14px; font-weight: 600; color: #374151; }
-  .pledge-label-unique::after { content: " *"; color: #B04B34; }
-
-  .pledge-input-unique, .pledge-select-unique {
-      padding: 13px 15px; border-radius: 8px; border: 2px solid #e5e7eb;
-      font-size: 15px; transition: .3s;
+/* For smaller screens, ensure proper spacing */
+@media (max-width: 480px) {
+  .pledge-row-unique {
+    gap: 14px !important;
   }
+}</style>
 
-  .pledge-input-unique:focus, .pledge-select-unique:focus {
-      border-color: #B04B34; outline: none;
-      box-shadow: 0 0 0 3px rgba(176,75,52,0.1);
-  }
-
-  .pledge-row-unique { display: flex; gap: 12px; }
-
-  .pledge-select-wrap-unique { position: relative; }
-
-  .pledge-select-unique { appearance: none; width: 100%; padding-right: 44px; cursor: pointer; }
-
-  .pledge-arrow-unique {
-      position: absolute; right: 15px; top: 50%; transform: translateY(-50%);
-      width: 18px; height: 18px; pointer-events: none;
-      transition: transform 0.3s;
-  }
-
-  .pledge-other-currency-wrap-unique { display: none; }
-
-  .pledge-submit-unique {
-      background: #B04B34; color: #fff; padding: 15px; border: none;
-      border-radius: 8px; font-size: 16px; cursor: pointer; 
-      transition: 0.3s; font-weight: 600;
-  }
-
-  .pledge-submit-unique:hover { background: #9a3e2a; }
-
-  .pledge-note-unique {
-      text-align: center; margin-top: 15px;
-      font-size: 12px; color: #6b7280;
-  }
-
-  /* Mobile */
-  @media(max-width:480px){
-      .pledge-row-unique { flex-direction: column; }
-  }
-</style>
+<!-- ===================== SCRIPTS ===================== -->
+<script>
+  (function () {
+  
+    /* ----------------------------------------------------
+        CLOSE OTHER OPEN DROPDOWNS
+    ---------------------------------------------------- */
+    function closeAllDropdowns(except) {
+      document.querySelectorAll('.custom-dropdown.open').forEach(dd => {
+        if (dd !== except) {
+          dd.classList.remove('open');
+          dd.querySelector('.cd-selected')?.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  
+    /* ----------------------------------------------------
+        INITIALIZE ALL CUSTOM DROPDOWNS
+    ---------------------------------------------------- */
+    document.querySelectorAll('.custom-dropdown').forEach(dd => {
+  
+      const btn = dd.querySelector('.cd-selected');
+      const optionsPanel = dd.querySelector('.cd-options');
+      const options = Array.from(dd.querySelectorAll('.cd-option'));
+      const hiddenInput = dd.querySelector('.cd-value');
+  
+      let focusedIndex = -1;
+  
+      /* ---------------- BUTTON CLICK TOGGLE ---------------- */
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dd.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  
+        if (isOpen) {
+          closeAllDropdowns(dd);
+          focusedIndex = -1;
+  
+          const selectedIndex = options.findIndex(opt => opt.classList.contains('selected'));
+          if (selectedIndex >= 0) {
+            options[selectedIndex].scrollIntoView({ block: 'nearest' });
+          }
+        }
+      });
+  
+      /* ---------------- OPTION CLICK SELECT ---------------- */
+      options.forEach((opt, idx) => {
+        opt.addEventListener('click', () => {
+          selectOption(opt);
+          closeAllDropdowns();
+        });
+  
+        opt.addEventListener('mouseenter', () => {
+          options.forEach(o => o.classList.remove('highlight'));
+          opt.classList.add('highlight');
+          focusedIndex = idx;
+        });
+        
+        // Touch devices: prevent double-tap zoom on option tap
+        opt.addEventListener('touchend', (e) => {
+          e.preventDefault();
+          selectOption(opt);
+          closeAllDropdowns();
+        }, {passive: false});
+      });
+  
+      /* ---------------- SELECT OPTION FUNCTION ---------------- */
+      function selectOption(optElement) {
+        const value = optElement.dataset.value ?? optElement.textContent.trim();
+        const displayText = optElement.textContent.trim();
+        
+        if (hiddenInput) hiddenInput.value = value;
+        
+        // Update button text
+        const placeholderSpan = btn.querySelector('.cd-placeholder');
+        if (placeholderSpan) {
+          placeholderSpan.textContent = displayText;
+          placeholderSpan.style.color = '#111827';
+        }
+  
+        // Remove selected class from all options and add to clicked one
+        options.forEach(o => o.classList.remove('selected'));
+        optElement.classList.add('selected');
+  
+        /* ---------------- SHOW OTHER CURRENCY ONLY IF "OTHER" ---------------- */
+        if (dd.dataset.name === 'pledgeCurrency') {
+          const otherWrap = document.getElementById('otherCurrencyWrapUnique');
+          const otherInput = document.getElementById('otherCurrencyUnique');
+  
+          if (value === 'OTHER') {
+            otherWrap.style.display = 'flex';
+            otherInput.required = true;
+            setTimeout(() => {
+              otherInput.focus();
+            }, 10);
+          } else {
+            otherWrap.style.display = 'none';
+            otherInput.required = false;
+            otherInput.value = "";
+          }
+        }
+      }
+  
+      /* ---------------- KEYBOARD NAVIGATION ---------------- */
+      optionsPanel.addEventListener('keydown', (ev) => {
+        if (!dd.classList.contains('open')) return;
+  
+        if (ev.key === 'ArrowDown') {
+          ev.preventDefault();
+          focusedIndex = Math.min(focusedIndex + 1, options.length - 1);
+          updateFocus();
+        }
+  
+        else if (ev.key === 'ArrowUp') {
+          ev.preventDefault();
+          focusedIndex = Math.max(focusedIndex - 1, 0);
+          updateFocus();
+        }
+  
+        else if (ev.key === 'Enter' || ev.key === ' ') {
+          ev.preventDefault();
+          if (focusedIndex >= 0) {
+            selectOption(options[focusedIndex]);
+            closeAllDropdowns();
+          }
+        }
+  
+        else if (ev.key === 'Escape') {
+          closeAllDropdowns();
+        }
+      });
+  
+      function updateFocus() {
+        options.forEach((o, i) => o.classList.toggle('highlight', i === focusedIndex));
+        if (focusedIndex >= 0) {
+          options[focusedIndex].scrollIntoView({ block: 'nearest' });
+        }
+      }
+  
+      /* ---------------- CLOSE ON CLICK OUTSIDE ---------------- */
+      document.addEventListener('click', (e) => {
+        if (!dd.contains(e.target)) {
+          dd.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      
+      /* ---------------- CLOSE ON TOUCH OUTSIDE FOR MOBILE ---------------- */
+      document.addEventListener('touchstart', (e) => {
+        if (!dd.contains(e.target)) {
+          dd.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      }, {passive: true});
+  
+      /* ---------------- CLOSE ON WINDOW RESIZE ---------------- */
+      window.addEventListener('resize', () => dd.classList.remove('open'));
+  
+    });
+  
+    /* ----------------------------------------------------
+        AMOUNT FIELD – ONLY POSITIVE DIGITS (NO - SIGN)
+    ---------------------------------------------------- */
+    document.querySelectorAll('.numeric-only').forEach(input => {
+      input.addEventListener('input', () => {
+        let clean = input.value.replace(/[^0-9]/g, "");
+        input.value = clean.replace(/^0+(?=\d)/, "");
+      });
+      
+      // Prevent zoom on iOS when focusing on number input
+      input.addEventListener('touchstart', (e) => {
+        if (window.innerWidth <= 480) {
+          e.target.style.fontSize = '16px';
+        }
+      });
+    });
+  
+    /* ----------------------------------------------------
+        FORM VALIDATION
+    ---------------------------------------------------- */
+    document.getElementById('pledgeFormUnique').addEventListener('submit', function (e) {
+      e.preventDefault();
+  
+      const nameInput = document.getElementById('pledgeFullNameUnique');
+      const currencyInput = this.querySelector('input[name="pledgeCurrency"]');
+      const amountInput = document.getElementById('pledgeAmountUnique');
+      const yearsInput = this.querySelector('input[name="pledgeYears"]');
+  
+      const otherWrap = document.getElementById('otherCurrencyWrapUnique');
+      const otherInput = document.getElementById('otherCurrencyUnique');
+  
+      // Basic validation
+      let isValid = true;
+      let errorMessage = "";
+  
+      if (!nameInput.value.trim()) {
+        errorMessage = "Please enter your name";
+        nameInput.focus();
+        isValid = false;
+      } else if (!currencyInput || !currencyInput.value.trim()) {
+        errorMessage = "Please select a currency";
+        isValid = false;
+      } else if (!amountInput.value || Number(amountInput.value) < 1) {
+        errorMessage = "Please enter a valid pledge amount (minimum 1)";
+        amountInput.focus();
+        isValid = false;
+      } else if (!yearsInput || !yearsInput.value.trim()) {
+        errorMessage = "Please select fulfillment period";
+        isValid = false;
+      } else if (currencyInput.value === 'OTHER' && (!otherInput.value.trim())) {
+        errorMessage = "Please specify the other currency";
+        otherInput.focus();
+        isValid = false;
+      }
+  
+      if (!isValid) {
+        alert(errorMessage);
+        return;
+      }
+  
+      const finalCurrency = (currencyInput.value === 'OTHER')
+        ? otherInput.value.trim()
+        : currencyInput.value;
+  
+      // Show success message
+      alert(`Thank you, ${nameInput.value.trim()}! Your pledge of ${finalCurrency} ${amountInput.value} for ${yearsInput.value} year(s) has been recorded.`);
+  
+      /* ---------------- RESET FORM ---------------- */
+      this.reset();
+      
+      // Reset inputs
+      nameInput.value = '';
+      amountInput.value = '';
+      otherInput.value = '';
+      
+      // Reset dropdowns
+      document.querySelectorAll('.custom-dropdown').forEach(dd => {
+        const placeholderSpan = dd.querySelector('.cd-placeholder');
+        const hiddenInput = dd.querySelector('.cd-value');
+        
+        if (dd.dataset.name === "pledgeYears") {
+          placeholderSpan.textContent = "Select years";
+        } else if (dd.dataset.name === "pledgeCurrency") {
+          placeholderSpan.textContent = "Select currency";
+        }
+        
+        placeholderSpan.style.color = '#6b7280';
+        if (hiddenInput) hiddenInput.value = '';
+        
+        dd.querySelectorAll('.cd-option').forEach(o => o.classList.remove('selected'));
+        dd.classList.remove('open');
+      });
+  
+      // Hide other currency field
+      document.getElementById('otherCurrencyWrapUnique').style.display = 'none';
+    });
+  
+    // Prevent form submission on Enter key in input fields
+    document.querySelectorAll('.pledge-input-unique').forEach(input => {
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && e.target.type !== 'submit') {
+          e.preventDefault();
+        }
+      });
+    });
+    
+  })();
+</script>
+  
+      
 
     <!----------------FAQ-->
     <section id="faq" class="faq section">
